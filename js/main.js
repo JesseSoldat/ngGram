@@ -1,5 +1,10 @@
-import $ from 'jquery';
-import _ from 'underscore';
-import moment from 'moment';
+import angular from 'angular';
 
-console.log('Hello, World');
+import './app-core/index';
+import './app-layout/index';
+import './app-image/index';
+
+angular
+  .module('app', ['app.core', 'app-layout', 'app.image'])
+
+;
