@@ -10,10 +10,10 @@ let config = function($stateProvider, $urlRouterProvider) {
     .state('root.home', {
       url: '/',
       controller: 'HomeController as vm',
-      templateUrl: 'templates/app-layout.home.tpl.html'
+      templateUrl: 'templates/app-layout/home.tpl.html'
     })
     .state('root.images', {
-      url: './images',
+      url: '/images',
       controller: 'ImageController as vm',
       templateUrl: 'templates/app-layout.images.tpl.html'
     });
@@ -21,6 +21,6 @@ let config = function($stateProvider, $urlRouterProvider) {
 
 };
 
-config.$inject = [''];
+config.$inject = ['$stateProvider', '$urlRouterProvider'];
 
 export default config;
