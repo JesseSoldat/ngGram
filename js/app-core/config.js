@@ -15,7 +15,12 @@ let config = function($stateProvider, $urlRouterProvider) {
     .state('root.images', {
       url: '/images',
       controller: 'ImageController as vm',
-      templateUrl: 'templates/app-layout.images.tpl.html'
+      templateUrl: 'templates/app-image/images.tpl.html'
+    })
+    .state('root.addImages', {
+      url: '/images/add',
+      controller: 'AddImageController as vm',
+      templateUrl: 'templates/app-image/images.add.tpl.html'
     });
   
 
