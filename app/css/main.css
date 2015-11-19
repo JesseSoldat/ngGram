@@ -6390,4 +6390,23 @@ th.hide-for-touch {
 body {
   background: #e2ebf3; }
 
+.imageWrapper {
+  width: 300px;
+  height: 300px;
+  margin: 3%;
+  float: left;
+  border: 3px solid black;
+  border-radius: 2px;
+  box-shadow: 5px 5px 5px white;
+  background-color: black; }
+  .imageWrapper h5 {
+    color: white;
+    padding: 2%; }
+  .imageWrapper img {
+    width: 100%; }
+
+.formWrapper {
+  margin: 6%;
+  width: 500px; }
+
 /*# sourceMappingURL=main.css.map */
