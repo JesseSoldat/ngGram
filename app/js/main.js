@@ -131,11 +131,10 @@ var jesseImage = function jesseImage($state, ImageService) {
     scope: {
       image: '=image'
     },
-    template: '\n      <div class="imageWrapper" >\n        <h5>{{ image.Nihongo}} {{ image.firstname}}{{ image.lastname}}</h5>\n        <img ng-src="{{ image.url2 }}">\n      </div>\n      \n     ',
+    template: '\n      <div class="imageWrapper">\n        \n        <h5>{{ image.Nihongo}} {{ image.firstname}} {{ image.lastname}}</h5>\n        <img ng-src="{{ image.url2 }}">\n        <button ng-click="vm.like(like)">Like <span>{{like}}</button>\n      </div>\n      \n     \n      \n     ',
     link: function link(scope, element, attrs) {
       element.on('click', function () {
         // console.log('clicked');
-        ImageService.like();
         element.addClass('heart');
       });
     }
@@ -209,8 +208,7 @@ var ImageService = function ImageService($http, PARSE) {
   }
 
   function like() {
-    // console.log("Liked");
-
+    console.log("Liked");
   }
 };
 

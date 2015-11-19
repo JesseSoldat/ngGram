@@ -26,7 +26,7 @@ let ImageService = function($http, PARSE) {
   }
 
   function like() {
-    // console.log("Liked");
+    console.log("Liked");
     
   }
 

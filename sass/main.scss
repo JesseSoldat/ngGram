@@ -6,9 +6,10 @@ body {
 .imageWrapper {
  
   width: 300px;
-  height: 300px;
+  height: 330px;
   margin: 3%;
   float: left;
+  font-size: .8em;
   border: 3px solid black;
   border-radius: 2px;
   box-shadow: 5px 5px 5px white; 
@@ -19,7 +20,14 @@ body {
       padding: 2%;
     }
     img {
-      width: 100%;
+      width: 300px;
+      height: 200px;
+    }
+    
+    button {
+      padding: 1%;
+      position: relative;
+
     }
 
 }

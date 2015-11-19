@@ -6392,9 +6392,10 @@ body {
 
 .imageWrapper {
   width: 300px;
-  height: 300px;
+  height: 330px;
   margin: 3%;
   float: left;
+  font-size: .8em;
   border: 3px solid black;
   border-radius: 2px;
   box-shadow: 5px 5px 5px white;
@@ -6403,7 +6404,11 @@ body {
     color: white;
     padding: 2%; }
   .imageWrapper img {
-    width: 100%; }
+    width: 300px;
+    height: 200px; }
+  .imageWrapper button {
+    padding: 1%;
+    position: relative; }
 
 .heart {
   background-image: url("http://images.vectorhq.com/images/previews/2e0/heart-transparent-inside-psd-446527.png");
