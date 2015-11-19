@@ -25,9 +25,18 @@ let ImageService = function($http, PARSE) {
     return $http.post(url, img, PARSE.CONFIG);
   }
 
-  function like() {
-    console.log("Liked");
+  function like(obj) {
+    // console.log(obj);
+    // let update = obj.likes++;
+    // console.log(update);
+    updateLikes(obj);
     
+
+  }
+  function updateLikes (obj) {
+    console.log(obj);
+    obj.likes = obj.likes + 1;
+    return $http.put(url + '/' + obj.objectId, obj, PARSE.CONFIG);
   }
 
 

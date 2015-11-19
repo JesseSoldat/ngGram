@@ -131,11 +131,12 @@ var jesseImage = function jesseImage($state, ImageService) {
     scope: {
       image: '=image'
     },
-    template: '\n      <div class="imageWrapper">\n        \n        <h5>{{ image.Nihongo}} {{ image.firstname}} {{ image.lastname}}</h5>\n        <img ng-src="{{ image.url2 }}">\n        <button ng-click="vm.like(like)">Like <span>{{like}}</button>\n      </div>\n      \n     \n      \n     ',
+    template: '\n      <div class="imageWrapper">\n        \n        <h5>{{ image.Nihongo}} {{ image.firstname}} {{ image.lastname}}</h5>\n        <img ng-src="{{ image.url2 }}">\n        <button>Like <span>{{image.likes}}</button>\n      </div>\n      \n     \n      \n     ',
     link: function link(scope, element, attrs) {
       element.on('click', function () {
         // console.log('clicked');
         element.addClass('heart');
+        ImageService.like(scope.image);
       });
     }
   };
@@ -207,8 +208,16 @@ var ImageService = function ImageService($http, PARSE) {
     return $http.post(url, img, PARSE.CONFIG);
   }
 
-  function like() {
-    console.log("Liked");
+  function like(obj) {
+    // console.log(obj);
+    // let update = obj.likes++;
+    // console.log(update);
+    updateLikes(obj);
+  }
+  function updateLikes(obj) {
+    console.log(obj);
+    obj.likes = obj.likes + 1;
+    return $http.put(url + '/' + obj.objectId, obj, PARSE.CONFIG);
   }
 };
 

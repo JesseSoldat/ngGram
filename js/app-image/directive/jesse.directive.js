@@ -10,7 +10,7 @@ let jesseImage = function($state, ImageService) {
         
         <h5>{{ image.Nihongo}} {{ image.firstname}} {{ image.lastname}}</h5>
         <img ng-src="{{ image.url2 }}">
-        <button ng-click="vm.like(like)">Like <span>{{like}}</button>
+        <button>Like <span>{{image.likes}}</button>
       </div>
       
      
@@ -20,6 +20,7 @@ let jesseImage = function($state, ImageService) {
         element.on('click', function() {
           // console.log('clicked');
           element.addClass('heart');
+          ImageService.like(scope.image);
           
 
         });
