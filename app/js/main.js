@@ -82,7 +82,7 @@ var AddImageContrller = function AddImageContrller(ImageService) {
 
   function addImg(imgObj) {
     ImageService.addImage(imgObj).then(function (res) {
-      console.log(res);
+      // console.log(res);
     });
   }
 };
@@ -131,8 +131,14 @@ var jesseImage = function jesseImage($state, ImageService) {
     scope: {
       image: '=image'
     },
-    template: '\n      <div class="imageWrapper">\n        <h5>{{ image.Nihongo}} {{ image.firstname}}{{ image.lastname}}</h5>\n        <img ng-src="{{ image.url2 }}">\n      </div>\n      \n     ',
-    link: function link(scope, element, attrs) {}
+    template: '\n      <div class="imageWrapper" >\n        <h5>{{ image.Nihongo}} {{ image.firstname}}{{ image.lastname}}</h5>\n        <img ng-src="{{ image.url2 }}">\n      </div>\n      \n     ',
+    link: function link(scope, element, attrs) {
+      element.on('click', function () {
+        // console.log('clicked');
+        ImageService.like();
+        element.addClass('heart');
+      });
+    }
   };
 };
 
@@ -182,6 +188,7 @@ var ImageService = function ImageService($http, PARSE) {
 
   this.getImages = getImages;
   this.addImage = addImage;
+  this.like = like;
 
   //Get Images
   function getImages() {
@@ -199,6 +206,11 @@ var ImageService = function ImageService($http, PARSE) {
   function addImage(imgObj) {
     var img = new Image(imgObj);
     return $http.post(url, img, PARSE.CONFIG);
+  }
+
+  function like() {
+    // console.log("Liked");
+
   }
 };
 

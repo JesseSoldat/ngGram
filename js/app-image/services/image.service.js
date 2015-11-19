@@ -4,6 +4,7 @@ let ImageService = function($http, PARSE) {
 
   this.getImages = getImages;
   this.addImage = addImage;
+  this.like = like;
 
 
   //Get Images
@@ -22,6 +23,11 @@ let ImageService = function($http, PARSE) {
   function addImage(imgObj) {
     let img = new Image(imgObj);
     return $http.post(url, img, PARSE.CONFIG);
+  }
+
+  function like() {
+    // console.log("Liked");
+    
   }
 
 

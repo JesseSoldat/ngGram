@@ -5,7 +5,7 @@ let AddImageContrller = function(ImageService) {
 
   function addImg (imgObj) {
     ImageService.addImage(imgObj).then( (res) => {
-      console.log(res);
+      // console.log(res);
     })
   }
 

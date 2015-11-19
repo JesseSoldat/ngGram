@@ -6405,6 +6405,10 @@ body {
   .imageWrapper img {
     width: 100%; }
 
+.heart {
+  background-image: url("http://images.vectorhq.com/images/previews/2e0/heart-transparent-inside-psd-446527.png");
+  background-position: center; }
+
 .formWrapper {
   margin: 6%;
   width: 500px; }
